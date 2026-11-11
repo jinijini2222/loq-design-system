@@ -1,0 +1,276 @@
+/* LOQ 상세페이지 디자인 시스템 — component styles. Values come from tokens.css (tokens.json); nothing here re-declares a token. */
+
+/* ---------- base ---------- */
+.loq {
+  font-family: var(--font-sans);
+  color: var(--ink-200);
+  background: var(--bg-000);
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+  margin: 0;
+}
+.loq *, .loq *::before, .loq *::after { box-sizing: border-box; }
+.loq :where(p, h1, h2, h3, figure) { margin: 0; }
+.loq-canvas { width: var(--canvas); margin: 0 auto; background: var(--bg-000); overflow: hidden; }
+.loq-white { color: var(--ink-100); }
+.loq-accent { color: var(--accent-text); }
+.loq-grad {
+  background: var(--gradient-headline, linear-gradient(90deg, var(--violet-500), var(--pink-300)));
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent; -webkit-text-fill-color: transparent;
+}
+.loq sup { font-size: .5em; vertical-align: .9em; line-height: 0; margin: 0 .05em; }
+.loq b, .loq strong { color: var(--ink-100); font-weight: 600; }
+.loq-wrap { padding: 0 var(--space-49); }
+
+/* image slot placeholder (real renders go here) */
+.loq-ph {
+  display: flex; align-items: center; justify-content: center;
+  background: repeating-linear-gradient(135deg, var(--surface-300) 0 14px, var(--surface-100) 14px 28px);
+  color: var(--ink-300); font-size: 14px; line-height: 20px; letter-spacing: -0.02em;
+}
+
+/* ---------- Section: boundary line + emblem + vertical gradient ---------- */
+.loq-section {
+  position: relative;
+  background: var(--gradient-section, linear-gradient(180deg, var(--bg-200), var(--bg-000)));
+  padding: var(--space-125) 0 var(--space-120);
+}
+.loq-divider { position: absolute; left: 0; right: 0; top: 0; height: 0; z-index: 2; }
+.loq-divider::before, .loq-divider::after {
+  content: ""; position: absolute; top: 0; height: 1px; width: calc(50% - 26px);
+}
+.loq-divider::before { left: 0; background: linear-gradient(90deg, rgba(182, 171, 194, 0) 0%, var(--line-divider) 100%); }
+.loq-divider::after { right: 0; background: linear-gradient(270deg, rgba(182, 171, 194, 0) 0%, var(--line-divider) 100%); }
+.loq-divider svg { position: absolute; left: 50%; top: -14px; width: 30px; height: 64px; margin-left: -15px; overflow: visible;
+  filter: drop-shadow(0 0 4px var(--glow-violet)) drop-shadow(0 0 8px var(--glow-violet)); }
+.loq-divider .ring { fill: none; stroke: var(--glow-core); stroke-width: 5; stroke-dasharray: 34 5 20 4; }
+.loq-divider .core, .loq-divider .tip { fill: var(--glow-core); }
+
+/* ---------- SectionTag ---------- */
+.loq-tag {
+  position: relative; display: inline-flex; align-items: center; justify-content: center;
+  min-width: 125px; height: 50px; padding: 0 22px;
+  border: 1px solid var(--line-tag);
+  box-shadow: var(--glow-tag);
+  color: var(--tag-text); text-transform: uppercase;
+}
+.loq-tag::before, .loq-tag::after { content: ""; position: absolute; width: 14px; height: 14px; border: 0 solid var(--glow); }
+.loq-tag::before { left: -1px; top: -1px; border-top-width: 2px; border-left-width: 2px; }
+.loq-tag::after { right: -1px; bottom: -1px; border-bottom-width: 2px; border-right-width: 2px; }
+
+/* ---------- SectionHeader ---------- */
+.loq-head { text-align: center; padding: 0 var(--space-49); }
+.loq-head__title { margin-top: var(--space-35); color: var(--ink-100); }
+.loq-head__title span { display: block; }
+.loq-head__title .loq-grad { display: inline-block; }
+.loq-head__body { margin: var(--space-30) auto 0; max-width: var(--text-max); color: var(--ink-200); }
+.loq-head + .loq-wrap, .loq-head + .loq-block { margin-top: var(--space-50); }
+
+/* ---------- Hero (시안 JPG 기준) ---------- */
+.loq-hero { text-align: center; padding: 18px var(--space-49) 0; }
+.loq-hero__sub { color: var(--lavender); }
+.loq-hero__title { margin-top: 22px; color: var(--ink-100); }
+.loq-hero__title span { display: block; }
+.loq-hero__title .loq-grad { display: inline-block; }
+.loq-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 50px; padding: 0 22px; border-radius: var(--radius-pill);
+  border: 2px solid var(--orchid-400); box-shadow: var(--glow-pill);
+  background: var(--surface-pill); color: var(--ink-100);
+}
+.loq-pill em { font-style: normal; color: var(--accent-text); }
+.loq-connector { position: relative; width: 2px; height: 60px; margin: 0 auto; background: linear-gradient(to bottom, var(--glow), var(--violet-500)); }
+.loq-connector::after { content: ""; position: absolute; left: 50%; bottom: -6px; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; background: var(--glow); box-shadow: var(--glow-node); }
+
+/* ---------- chamfer: cut top-left + bottom-right, 1px gradient edge ---------- */
+.loq-cut {
+  --cut: var(--cut-lg);
+  --edge: var(--gradient-edge, linear-gradient(135deg, var(--line-300), var(--line-300-end)));
+  --fill: var(--gradient-card, linear-gradient(135deg, var(--surface-300), var(--surface-100)));
+  position: relative; isolation: isolate;
+  background: var(--edge);
+  clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut));
+}
+.loq-cut::before {
+  content: ""; position: absolute; inset: 1px; z-index: -1;
+  background: var(--fill);
+  clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut));
+}
+/* photo frame: picture fills the cut shape; bottom-right only when the photo bleeds to the top-left */
+.loq-frame { --cut: var(--cut-lg); position: relative; overflow: hidden;
+  clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut)); }
+.loq-frame--br { clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%); }
+.loq-frame > img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.loq-frame > .loq-ph { width: 100%; height: 100%; }
+
+/* ---------- IntroCard (시안 JPG 기준) ---------- */
+.loq-intro { --edge: var(--line-violet); padding: 56px var(--space-46) 64px; text-align: center; }
+.loq-intro__eyebrow { color: var(--accent-text); text-transform: uppercase; }
+.loq-intro__body { margin-top: var(--space-24); color: var(--ink-200); }
+
+/* ---------- SpecCard ---------- */
+.loq-spec { min-height: 258px; overflow: hidden; }
+.loq-spec__label { display: block; padding: 66px var(--space-46) 16px; color: var(--accent-text); text-transform: uppercase; }
+.loq-spec__rule { height: 1px; background: var(--surface-300); position: relative; z-index: 1; }
+.loq-spec__title { padding: 18px var(--space-46) 0; color: var(--ink-100); position: relative; z-index: 1; }
+.loq-spec__media { position: absolute; top: 1px; right: 1px; bottom: 1px; width: 60%; z-index: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 40%); mask-image: linear-gradient(90deg, transparent 0%, #000 40%); }
+.loq-spec__media > * { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- FeatureCard (grid pattern) ---------- */
+.loq-feature {
+  --fill: linear-gradient(var(--surface-300) 1px, transparent 1px) 0 0 / 40px 40px, linear-gradient(90deg, var(--surface-300) 1px, transparent 1px) 0 0 / 40px 40px, var(--gradient-card, linear-gradient(135deg, var(--surface-300), var(--surface-100)));
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-height: 160px; padding: 0 var(--space-24); text-align: center;
+}
+.loq-feature__hl { color: var(--accent-text); }
+.loq-feature__tx { color: var(--ink-100); }
+
+/* ---------- FlowCards (CPU mini cards + connectors) ---------- */
+.loq-flow { position: relative; width: 330px; height: 432px; }
+.loq-flow__card { --fill: var(--gradient-card-deep, linear-gradient(135deg, var(--surface-300), var(--surface-400)));
+  position: absolute; width: 252px; height: 150px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: var(--ink-100); }
+.loq-flow__card:nth-of-type(2) { width: 222px; }
+.loq-flow__card em { font-style: normal; font-weight: 800; color: var(--accent-deep); }
+.loq-flow__line { position: absolute; border: 2px solid var(--connector); box-shadow: var(--glow-node); }
+.loq-flow__node { position: absolute; width: 18px; height: 18px; margin: -9px 0 0 -9px; border-radius: 50%; background: var(--connector); box-shadow: var(--glow-node); }
+
+/* ---------- Badge (number) ---------- */
+.loq-badge {
+  display: inline-flex; align-items: center; justify-content: center; flex: none;
+  width: 45px; height: 37px; color: var(--ink-100);
+  font-size: 20px; line-height: 1; font-weight: 800; letter-spacing: -0.05em;
+  background: var(--gradient-badge, linear-gradient(135deg, var(--violet-600), var(--badge-violet)));
+  clip-path: polygon(var(--cut-sm) 0, 100% 0, 100% calc(100% - var(--cut-sm)), calc(100% - var(--cut-sm)) 100%, 0 100%, 0 var(--cut-sm));
+}
+/* photo pin: same badge with a 2px pin outline, leader line + dot below */
+.loq-pin { position: absolute; display: flex; flex-direction: column; align-items: center; }
+.loq-pin .loq-badge { filter: drop-shadow(0 0 0 var(--pin)); outline: 2px solid var(--pin); outline-offset: -2px; }
+.loq-pin i { display: block; width: 1px; background: var(--pin); }
+.loq-pin i::after { content: ""; display: block; width: 9px; height: 9px; margin: 0 0 0 -4px; border-radius: 50%; background: var(--pin); transform: translateY(100%); }
+
+/* ---------- StepCard (시안 JPG 기준) ---------- */
+.loq-steps { position: relative; display: flex; flex-direction: column; gap: 16px; }
+.loq-step { --cut: var(--cut-md); --edge: var(--line-violet); --fill: var(--surface-violet); display: flex; gap: 14px; align-items: flex-start; width: 406px; padding: 24px 28px; }
+.loq-step:nth-child(even) { margin-left: 64px; }
+.loq-step__a { color: var(--ink-100); }
+.loq-step__b { color: var(--accent-text); font-weight: 600; }
+.loq-dash { position: absolute; left: 18px; width: 46px; border-left: 2px dashed var(--glow); border-bottom: 2px dashed var(--glow); border-bottom-left-radius: 6px; }
+.loq-dash::before { content: ""; position: absolute; left: -6px; top: -5px; width: 10px; height: 10px; border-radius: 50%; background: var(--glow); box-shadow: var(--glow-node); }
+
+/* ---------- StatRow ---------- */
+.loq-stats { display: grid; grid-template-columns: repeat(3, auto); justify-content: space-between; }
+.loq-stat { padding: 0 0 0 26px; border-left: 1px solid rgba(84, 84, 84, 0.72); }
+.loq-stat:first-child { border-left: 0; padding-left: 0; }
+.loq-stat__num {
+  background: var(--gradient-stat, linear-gradient(180deg, var(--stat-blue), var(--stat-purple)));
+  -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+}
+.loq-stat__unit { color: var(--ink-100); opacity: .5; margin-left: var(--space-4); }
+.loq-stat__label { display: block; margin-top: 12px; color: var(--ink-100); }
+
+/* ---------- RankChart (PSD: CPU 멀티 코어 성능 비교) ---------- */
+.loq-rank__title { color: var(--ink-100); }
+.loq-rank__title b { font-weight: 800; }
+.loq-rank__src { margin-top: 2px; color: var(--ink-400); opacity: .77; }
+.loq-rank__plot { position: relative; margin-top: 18px; height: 252px; border: 1px solid var(--line-chart); border-right: 0; border-top: 0; padding: 30px 90px 0 10px; }
+.loq-rank__grid { position: absolute; top: 0; bottom: 0; width: 0; border-left: 1px dashed var(--line-100); }
+.loq-rank__row { position: relative; height: 68px; }
+.loq-rank__name { display: block; color: var(--ink-150); }
+.loq-rank__bar { position: relative; height: 21px; margin-top: 8px; border-radius: 0 var(--radius-pill) var(--radius-pill) 0; background: var(--gradient-track, linear-gradient(90deg, #1f1d20, var(--chart-track))); }
+.loq-rank__row--top .loq-rank__bar { background: var(--gradient-bar, linear-gradient(90deg, #1c1c1c, var(--chart-hot))); }
+.loq-rank__row--top .loq-rank__bar::after { content: ""; position: absolute; right: -4px; top: -4px; width: 29px; height: 29px; border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 0 30%, #f3c6ff 31% 60%, rgba(215, 34, 255, .35) 61%); box-shadow: var(--glow-bar); }
+.loq-rank__val { position: absolute; right: -90px; width: 80px; text-align: right; bottom: 0; color: var(--ink-150); }
+.loq-rank__row--top .loq-rank__val { color: var(--accent-deep); font-weight: 700; }
+.loq-rank__axis { display: flex; justify-content: space-between; padding: 8px 90px 0 0; color: var(--ink-400); opacity: .65; }
+
+/* ---------- BarChart (시안 JPG: 그래픽 칩셋 성능 비교) ---------- */
+.loq-chart__head { display: flex; justify-content: space-between; align-items: flex-end; }
+.loq-chart__title { color: var(--ink-100); }
+.loq-chart__src { margin-top: 4px; color: var(--ink-400); }
+.loq-legend { display: flex; gap: 24px; color: var(--ink-200); font-size: 15px; line-height: 20px; }
+.loq-legend i { display: inline-block; width: 12px; height: 12px; margin-right: var(--space-8); border-radius: 2px; vertical-align: -1px; }
+.loq-plot { position: relative; margin-top: 28px; height: 160px; border-left: 1px solid var(--line-chart); border-bottom: 1px solid var(--line-chart); }
+.loq-plot__grid { position: absolute; top: 0; bottom: 0; width: 0; border-left: 1px dashed var(--line-100); }
+.loq-bar { position: absolute; z-index: 2; left: 0; height: 28px; border-radius: 0 var(--radius-pill) var(--radius-pill) 0; }
+.loq-bar--track { background: var(--gradient-track, linear-gradient(90deg, #1f1d20, var(--chart-track))); }
+.loq-bar--hot { background: var(--gradient-bar, linear-gradient(90deg, #1c1c1c, var(--chart-hot))); }
+.loq-bar--hot::after { content: ""; position: absolute; right: -4px; top: -1px; width: 30px; height: 30px; border-radius: 50%; background: #f3c6ff; box-shadow: var(--glow-bar); }
+.loq-bar__val { position: absolute; left: 100%; top: 50%; transform: translateY(-50%); margin-left: 18px; color: var(--ink-150); white-space: nowrap; }
+.loq-axis { display: flex; justify-content: space-between; margin-top: 10px; color: var(--ink-400); }
+.loq-callout { position: absolute; bottom: 0; z-index: 1; width: 112px; height: 150px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 18px; }
+.loq-callout::before { content: ""; position: absolute; inset: 0; z-index: -1;
+  background: var(--gradient-callout, linear-gradient(180deg, var(--callout-amber), transparent));
+  clip-path: polygon(50% 0, 100% 30%, 76% 30%, 76% 100%, 24% 100%, 24% 30%, 0 30%); }
+.loq-callout b { color: var(--callout-coral); font-size: 15px; font-weight: 600; }
+.loq-callout strong { color: var(--ink-100); font-size: 34px; line-height: 1; font-weight: 800; letter-spacing: -0.03em; margin-left: 2px; }
+
+/* ---------- BenefitTrio (PSD: 래피드 차지 프로 / 70% / 스마트 배터리) ---------- */
+.loq-benefit { display: grid; grid-template-columns: repeat(3, 1fr); }
+.loq-benefit__col { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 10px; }
+.loq-benefit__col + .loq-benefit__col::before { content: ""; position: absolute; left: 0; top: -4px; height: 210px; border-left: 1px dashed rgba(197, 194, 198, 0.26); }
+.loq-benefit__title { color: var(--ink-100); }
+.loq-benefit__title mark { color: var(--highlight-pink); font-weight: 800; background: linear-gradient(transparent 30%, rgba(251, 160, 226, 0.21) 30% 85%, transparent 85%); padding: 0 2px; }
+.loq-benefit__sub { margin-top: 2px; color: var(--ink-150); }
+.loq-ring { position: relative; width: 130px; height: 130px; margin-top: 22px; }
+.loq-ring svg { width: 130px; height: 130px; overflow: visible; }
+.loq-ring .track { fill: none; stroke: var(--ring-track); stroke-width: 7; }
+.loq-ring .arc { fill: none; stroke-width: 7; stroke-linecap: round; }
+.loq-ring .dot { fill: #ffd6f4; filter: drop-shadow(0 0 5px var(--ring-dot)) drop-shadow(0 0 9px var(--ring-dot)); }
+.loq-ring__center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.loq-ring__center small { font-size: 26px; }
+.loq-ring__center span { margin-top: 6px; font-size: 16px; font-weight: 700; letter-spacing: -0.05em; color: #c5c2c6; }
+.loq-note { margin-top: 13px; text-align: center; color: var(--ink-400); opacity: .88; }
+
+/* ---------- KeyCap + ModeChip ---------- */
+.loq-key { display: inline-flex; align-items: center; justify-content: center; min-width: 52px; height: 52px; padding: 0 10px;
+  border: 2px solid var(--key-pink); border-radius: var(--radius-key); background: var(--surface-key); color: #fc99f3; }
+.loq-key--q { border-color: var(--key-violet); color: #c08fff; }
+.loq-key--inline { min-width: 34px; height: 34px; padding: 0 6px; font-size: 22px; font-weight: 700; vertical-align: middle; margin: -4px 2px 0; }
+.loq-keys { display: inline-flex; align-items: center; gap: 12px; color: #dadada; font-size: 18px; font-weight: 600; }
+.loq-mode { display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 5px 0 16px; border-radius: var(--radius-pill); background: var(--surface-plum); color: var(--key-pink); }
+.loq-mode i { display: inline-flex; width: 38px; height: 38px; border-radius: 50%; background: var(--key-pink); align-items: center; justify-content: center; }
+.loq-mode i svg { width: 18px; height: 18px; fill: none; stroke: var(--surface-plum); stroke-width: 2; }
+
+/* ---------- ChipGroup (시안 JPG 기준) ---------- */
+.loq-chips__head { display: flex; align-items: baseline; gap: 10px; }
+.loq-chips__head h3 { color: var(--ink-100); }
+.loq-chips__head small { color: var(--ink-400); }
+.loq-chips { display: flex; flex-wrap: wrap; gap: var(--space-8); margin-top: var(--space-24); }
+.loq-chip { display: inline-flex; align-items: center; height: 46px; padding: 0 22px; border-radius: var(--radius-sm); border: 1px solid #3d3d3d; background: var(--surface-200); color: var(--ink-100); font-size: 17px; font-weight: 500; }
+
+/* ---------- CompareCard (시안 JPG 기준) ---------- */
+.loq-compare { width: var(--col-3); }
+.loq-compare__media { position: relative; display: grid; grid-template-columns: 1fr 1fr; height: 182px; gap: 1px; background: var(--ink-100); }
+.loq-compare__media > :not(.loq-onoff) { width: 100%; height: 100%; object-fit: cover; }
+.loq-onoff { position: absolute; bottom: 10px; display: inline-flex; align-items: center; height: 24px; padding: 0 9px; border-radius: var(--radius-xs); font-size: 14px; font-weight: 700; line-height: 1; }
+.loq-onoff--off { left: 10px; background: rgba(0, 0, 0, 0.6); border: 1px solid var(--ink-300); color: var(--ink-200); }
+.loq-onoff--on { left: calc(50% + 10px); background: var(--on-chip); color: var(--ink-100); }
+.loq-compare__label { --cut: var(--cut-md); background: var(--surface-500); display: flex; align-items: center; justify-content: center; height: 68px; color: var(--ink-100);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%); }
+
+/* ---------- SetupList ---------- */
+.loq-setup { display: grid; grid-template-columns: 381px 1fr; row-gap: 26px; padding: 0; margin: 0; list-style: none; }
+.loq-setup li { display: flex; align-items: center; gap: 10px; color: var(--ink-150); white-space: nowrap; }
+
+/* ---------- SpecSheet (PSD: 상세 스펙) ---------- */
+.loq-spechead { text-align: center; margin-top: -13px; }
+.loq-spechead__title { color: var(--ink-100); }
+.loq-dim { position: relative; margin-top: 42px; height: 484px; background: var(--surface-spec); border: 1px solid var(--line-400); }
+.loq-dim__pill { position: absolute; left: 50%; top: -23px; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 16px; height: 53px; padding: 0 36px;
+  border-radius: var(--radius-pill); background: var(--surface-pill); border: 1px solid #434346; color: #e8e8e8; white-space: nowrap; }
+.loq-dim__pill i { width: 1px; height: 16px; background: #e8e8e8; opacity: .6; }
+.loq-dim__unit { position: absolute; right: 18px; top: 18px; color: #aaaaaa; font-size: 18px; letter-spacing: -0.025em; }
+.loq-dim__media { position: absolute; left: 110px; right: 60px; top: 90px; bottom: 50px; }
+.loq-specgroup + .loq-specgroup { margin-top: var(--space-52); }
+.loq-specgroup__title { color: var(--spec-heading); }
+.loq-spectable { width: 100%; margin-top: var(--space-6); border-collapse: collapse; background: var(--surface-spec); border: 1px solid var(--line-400); border-top: 2px solid var(--violet-400); }
+.loq-spectable th, .loq-spectable td { text-align: left; vertical-align: top; padding: 10px 0; border-top: 1px solid var(--line-200); }
+.loq-spectable tr:first-child th, .loq-spectable tr:first-child td { border-top: 0; }
+.loq-spectable th { width: var(--spec-col); padding-left: var(--space-16); color: var(--ink-100); }
+.loq-spectable td { padding-right: var(--space-16); color: var(--ink-300); }
+.loq-spectable ul { margin: 0; padding: 0; list-style: none; }
+.loq-spectable li::before { content: "• "; }
+.loq-footer { margin-top: 70px; padding-top: 22px; border-top: 1px solid rgba(82, 82, 85, 0.6); text-align: center; color: var(--ink-300); }

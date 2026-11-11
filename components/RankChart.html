@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko">
+<!--
+# RankChart
+
+여러 제품 순위 비교 막대(PSD: CPU 멀티 코어 성능 비교). 폭 392px.
+
+- 제목 `title-md`(첫 단어 `<b>` 800) + 출처 `caption`(ink-400, 77%).
+- 프레임 왼쪽·아래 1px `line-chart`, 세로 보조선 1px 점선 `line-100`. 행 간격 68.
+- 막대 높이 21, 오른쪽 끝만 둥글게. 1위 `gradient-bar` + 29px 빛나는 끝점(`glow-bar`), 나머지 `gradient-track`.
+- 항목명 `chart-label` `ink-150`, 순위별 불투명도 100 / 60 / 40%. 값은 오른쪽 정렬 `axis`, 1위만 Bold `accent-deep`.
+- 막대 폭 = 값 ÷ 축 최대값 × 306px. **축 눈금은 등간격**(PSD 원본의 0 / 1,000 / 1,500 / 20,000은 쓰지 않는다).
+-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=860">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="loq.css"><title>RankChart</title>
+<style>html,body{margin:0;background:var(--bg-000);} .pad{padding:30px 49px;}</style></head>
+<body class="loq">
+<div class="pad"><div style="width:392px"><h3 class="loq-rank__title title-md"><b>CPU</b> 멀티 코어 성능 비교</h3><p class="loq-rank__src caption">출처 : Notebookcheck 실측</p>
+<div class="loq-rank__plot" style="padding:0"><span class="loq-rank__grid" style="left:86px"></span><span class="loq-rank__grid" style="left:163px"></span><span class="loq-rank__grid" style="left:240px"></span><span class="loq-rank__grid" style="left:316px"></span><div class="loq-rank__row loq-rank__row--top" style="position:absolute;left:10px;top:30px;width:306px;height:48px"><span class="loq-rank__name chart-label" style="opacity:1">Core Ultra X7 358H</span><div class="loq-rank__bar" style="width:290px"></div><span class="loq-rank__val axis" style="right:-74px;opacity:1">18,932</span></div><div class="loq-rank__row " style="position:absolute;left:10px;top:98px;width:306px;height:48px"><span class="loq-rank__name chart-label" style="opacity:0.6">Core Ultra 7 255H</span><div class="loq-rank__bar" style="width:273px"></div><span class="loq-rank__val axis" style="right:-74px;opacity:0.72">17,845</span></div><div class="loq-rank__row " style="position:absolute;left:10px;top:166px;width:306px;height:48px"><span class="loq-rank__name chart-label" style="opacity:0.4">Core Ultra 7 258V</span><div class="loq-rank__bar" style="width:158px"></div><span class="loq-rank__val axis" style="right:-74px;opacity:0.52">10,301</span></div></div><div style="position:relative;height:24px;margin-top:8px;color:var(--ink-400);opacity:.65"><span class="axis" style="position:absolute;left:10px;transform:translateX(0)">0</span><span class="axis" style="position:absolute;left:86px;transform:translateX(-50%)">5,000</span><span class="axis" style="position:absolute;left:163px;transform:translateX(-50%)">10,000</span><span class="axis" style="position:absolute;left:240px;transform:translateX(-50%)">15,000</span><span class="axis" style="position:absolute;left:316px;transform:translateX(-50%)">20,000</span></div></div></div>
+</body>
+</html>

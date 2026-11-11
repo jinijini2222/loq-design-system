@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+<!--
+# BarChart
+
+자사 vs 경쟁 2막대 비교(시안 JPG: 그래픽 칩셋). 제목 `title-md`, 출처, 범례.
+
+- 막대 28px: 자사 `gradient-bar` + 빛나는 끝점, 경쟁 `gradient-track`.
+- 증가율 콜아웃 `loq-callout`은 페이지에 한 번. 3개 이상 비교는 `RankChart`.
+-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=860">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="loq.css"><title>BarChart</title>
+<style>html,body{margin:0;background:var(--bg-000);} .pad{padding:40px 49px;}</style></head>
+<body class="loq">
+<div class="pad">
+<div class="loq-chart__head"><div><h3 class="loq-chart__title title-md">그래픽 칩셋 성능 비교</h3><p class="loq-chart__src caption">출처 : Notebookcheck 실측</p></div>
+<div class="loq-legend"><span><i style="background:var(--chart-hot)"></i>Arc B 390</span><span><i style="background:var(--chart-track)"></i>RTX 3050</span></div></div>
+<div class="loq-plot">
+<span class="loq-plot__grid" style="left:25%"></span><span class="loq-plot__grid" style="left:50%"></span><span class="loq-plot__grid" style="left:75%"></span>
+<div class="loq-callout" style="left:calc(75% - 30px)"><b>약</b><strong>46%</strong></div>
+<div class="loq-bar loq-bar--hot" style="top:44px;width:83.5%"><span class="loq-bar__val axis" style="margin-left:34px">6,679</span></div>
+<div class="loq-bar loq-bar--track" style="top:92px;width:57.1%"><span class="loq-bar__val axis">4,571</span></div>
+</div>
+<div class="loq-axis axis"><span>0</span><span>2,000</span><span>4,000</span><span>6,000</span><span>8,000</span></div>
+</div>
+</body>
+</html>

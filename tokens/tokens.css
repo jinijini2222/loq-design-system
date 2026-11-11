@@ -1,0 +1,143 @@
+/* LOQ 상세페이지 디자인 시스템 — tokens (generated from tokens.json) */
+@font-face { font-family: "SUIT Variable"; src: url("../fonts/SUIT-Variable.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
+
+:root {
+  /* color */
+  --bg-000: #000000;
+  --bg-100: #0e0e10;
+  --bg-200: #1b1b1f;
+  --surface-100: #181818;
+  --surface-200: #1c1c1e;
+  --surface-300: #2f2f30;
+  --surface-400: #0e0e0e;
+  --surface-500: #303030;
+  --surface-violet: #17141d;
+  --surface-spec: #26262d;
+  --surface-pill: #19191c;
+  --surface-key: #111112;
+  --surface-plum: #582d51;
+  --line-100: #373738;
+  --line-200: #525255;
+  --line-300: #6a6a70;
+  --line-300-end: #2a2a2c;
+  --line-400: #414143;
+  --line-chart: #4c4b4f;
+  --line-violet: #60487c;
+  --line-tag: #755f7d;
+  --line-divider: #b6abc2;
+  --violet-500: #9f6ee9;
+  --orchid-400: #cd87e5;
+  --pink-300: #fba0e2;
+  --violet-600: #7d49cf;
+  --badge-violet: #b77af6;
+  --violet-400: #a571e9;
+  --spec-heading: #ad6ffe;
+  --accent-text: #de8fff;
+  --accent-deep: #d268ff;
+  --tag-text: #df93f2;
+  --highlight-pink: #ff9eea;
+  --lavender: #9c90d4;
+  --glow: #e4b3f1;
+  --glow-core: #f6f4ff;
+  --glow-violet: #9630ff;
+  --connector: #d188f0;
+  --pin: #f7d5fa;
+  --key-pink: #f29be4;
+  --key-violet: #a471e6;
+  --on-chip: #a83cd0;
+  --ink-100: #ffffff;
+  --ink-150: #e2e2e2;
+  --ink-200: #cfcfcf;
+  --ink-300: #aeaeae;
+  --ink-400: #8d8d8d;
+  --chart-hot: #c056ed;
+  --chart-dot: #d722ff;
+  --chart-track: #373738;
+  --stat-blue: #6cc4ff;
+  --stat-purple: #d370ff;
+  --ring-track: #574964;
+  --ring-dot: #ff59d5;
+  --callout-amber: #fcac68;
+  --callout-coral: #fc9878;
+  /* spacing */
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-30: 30px;
+  --space-35: 35px;
+  --space-46: 46px;
+  --space-49: 49px;
+  --space-50: 50px;
+  --space-52: 52px;
+  --space-120: 120px;
+  --space-125: 125px;
+  /* radius */
+  --radius-none: 0;
+  --radius-xs: 4px;
+  --radius-key: 6px;
+  --radius-sm: 8px;
+  --radius-pill: 999px;
+  /* chamfer */
+  --cut-lg: 18px;
+  --cut-md: 14px;
+  --cut-sm: 10px;
+  /* layout */
+  --canvas: 860px;
+  --content: 762px;
+  --col-2: 375px;
+  --col-3: 246px;
+  --text-max: 760px;
+  --spec-col: 153px;
+  --spec-row: 48px;
+  /* gradient */
+  --gradient-headline: linear-gradient(90deg, #9f6ee9 0%, #fba0e2 100%);
+  --gradient-section: linear-gradient(180deg, #1b1b1f 0%, #000000 100%);
+  --gradient-card: linear-gradient(135deg, #2f2f30 0%, #181818 100%);
+  --gradient-card-deep: linear-gradient(135deg, #2f2f30 0%, #0e0e0e 100%);
+  --gradient-edge: linear-gradient(135deg, #6a6a70 0%, #2a2a2c 100%);
+  --gradient-stat: linear-gradient(180deg, #6cc4ff 0%, #d370ff 100%);
+  --gradient-badge: linear-gradient(135deg, #7d49cf 0%, #b77af6 100%);
+  --gradient-bar: linear-gradient(90deg, #1c1c1c 0%, #c056ed 100%);
+  --gradient-track: linear-gradient(90deg, #1f1d20 0%, #373738 100%);
+  --gradient-callout: linear-gradient(180deg, #fcac68 0%, #f06cc8 55%, rgba(240, 108, 200, 0) 100%);
+  /* shadow */
+  --glow-emblem: 0 0 10px 2px rgba(150, 48, 255, 0.92);
+  --glow-tag: 0 0 10px 0 rgba(230, 140, 248, 0.27), inset 0 0 40px 0 rgba(230, 140, 248, 0.22);
+  --glow-node: 0 0 10px 2px rgba(150, 48, 255, 0.56);
+  --glow-bar: 0 0 16px 4px rgba(215, 34, 255, 0.9);
+  --glow-ring: 0 0 13px 3px rgba(255, 89, 213, 0.82);
+  --glow-pill: 0 0 18px 0 rgba(196, 126, 226, 0.45);
+  --font-sans: "SUIT Variable", SUIT, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+
+/* type styles */
+.display { font-family: var(--font-sans); font-size: 88px; line-height: 105px; font-weight: 800; letter-spacing: -0.05em; }
+.display-single { font-family: var(--font-sans); font-size: 88px; line-height: 105px; font-weight: 700; letter-spacing: -0.05em; }
+.subhero { font-family: var(--font-sans); font-size: 30px; line-height: 40px; font-weight: 500; letter-spacing: -0.03em; }
+.title-lg { font-family: var(--font-sans); font-size: 30px; line-height: 43px; font-weight: 700; letter-spacing: -0.05em; }
+.title-md { font-family: var(--font-sans); font-size: 30px; line-height: 40px; font-weight: 700; letter-spacing: -0.05em; }
+.title-sm { font-family: var(--font-sans); font-size: 28px; line-height: 32px; font-weight: 700; letter-spacing: -0.05em; }
+.title-xs { font-family: var(--font-sans); font-size: 22px; line-height: 32px; font-weight: 500; letter-spacing: -0.02em; }
+.spec-heading { font-family: var(--font-sans); font-size: 22px; line-height: 30px; font-weight: 700; letter-spacing: -0.05em; }
+.body-lg { font-family: var(--font-sans); font-size: 24px; line-height: 38px; font-weight: 500; letter-spacing: -0.05em; }
+.body-md { font-family: var(--font-sans); font-size: 20px; line-height: 32px; font-weight: 500; letter-spacing: -0.05em; }
+.spec-label { font-family: var(--font-sans); font-size: 18px; line-height: 28px; font-weight: 600; letter-spacing: -0.05em; }
+.spec-value { font-family: var(--font-sans); font-size: 18px; line-height: 28px; font-weight: 500; letter-spacing: -0.05em; }
+.caption { font-family: var(--font-sans); font-size: 16px; line-height: 25px; font-weight: 500; letter-spacing: -0.05em; }
+.tag { font-family: var(--font-sans); font-size: 18px; line-height: 24px; font-weight: 700; letter-spacing: 0; }
+.label { font-family: var(--font-sans); font-size: 18px; line-height: 24px; font-weight: 700; letter-spacing: 0; }
+.eyebrow { font-family: var(--font-sans); font-size: 20px; line-height: 28px; font-weight: 500; letter-spacing: 0.1em; }
+.chip { font-family: var(--font-sans); font-size: 16px; line-height: 24px; font-weight: 700; letter-spacing: -0.05em; }
+.pill { font-family: var(--font-sans); font-size: 20px; line-height: 38px; font-weight: 400; letter-spacing: -0.025em; }
+.key { font-family: var(--font-sans); font-size: 18px; line-height: 24px; font-weight: 800; letter-spacing: 0; }
+.stat { font-family: var(--font-sans); font-size: 60px; line-height: 60px; font-weight: 800; letter-spacing: -0.05em; }
+.stat-unit { font-family: var(--font-sans); font-size: 18px; line-height: 24px; font-weight: 600; letter-spacing: -0.05em; }
+.stat-label { font-family: var(--font-sans); font-size: 18px; line-height: 24px; font-weight: 600; letter-spacing: -0.05em; }
+.ring-num { font-family: var(--font-sans); font-size: 38px; line-height: 30px; font-weight: 900; letter-spacing: -0.05em; }
+.chart-label { font-family: var(--font-sans); font-size: 16px; line-height: 20px; font-weight: 600; letter-spacing: -0.025em; }
+.axis { font-family: var(--font-sans); font-size: 16px; line-height: 20px; font-weight: 500; letter-spacing: -0.05em; }
+.badge-num { font-family: var(--font-sans); font-size: 20px; line-height: 20px; font-weight: 800; letter-spacing: -0.05em; }

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+<!--
+# HeroIntro
+
+페이지 첫 화면. `subhero`(lavender) → `display` 2줄 → 모델 필 → 연결선 → 인트로 카드.
+
+- 인트로 카드는 `loq-cut loq-intro`: `line-violet` 테두리, `gradient-card` 면, `cut-lg`.
+- 영문 슬로건 `eyebrow`(대문자, accent-text) + `body-lg` 3줄.
+- 연결선 끝 노드 점이 카드 윗변에 닿게 카드에 -6px 겹친다.
+-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=860">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="loq.css"><title>HeroIntro</title>
+<style>html,body{margin:0;background:var(--bg-000);} .pad{padding:0;}</style></head>
+<body class="loq">
+<div class="loq-canvas"><section class="loq-hero">
+<p class="loq-hero__sub subhero">마스터의 손끝에서 완성되고,</p>
+<h1 class="loq-hero__title display"><span>새로운 시작을</span><span class="loq-grad">위해 태어나다</span></h1>
+<div style="margin-top:34px"><span class="loq-pill chip" style="font-size:17px;font-weight:500">Lenovo LOQ Essential <em>15IPH11E</em></span></div>
+<div class="loq-connector"></div>
+</section>
+<div class="loq-wrap" style="padding-bottom:40px;margin-top:-6px"><div class="loq-cut loq-intro">
+<p class="loq-intro__eyebrow eyebrow">Built by masters. Born to begin.</p>
+<p class="loq-intro__body body-lg">레노버의 게이밍 혁신 유산에서 탄생한 새로운 LOQ Essential은<br><b>매끄러운 게이밍 성능을 제공하도록 설계</b>되었습니다. <b>휴대하기 좋은 15.3인치</b><br><b>고해상도 디스플레이</b>에서 좋아하는 게임 세계에 깊이 빠져들어 보세요.</p>
+</div></div></div>
+</body>
+</html>

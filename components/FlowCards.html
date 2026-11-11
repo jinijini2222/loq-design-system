@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko">
+<!--
+# FlowCards
+
+CPU 아키텍처 같은 3단계 흐름. `loq-flow` 안에 `loq-cut loq-flow__card` 3개 + SVG 커넥터.
+
+- 카드 252 × 150 / 222 × 150 / 252 × 150, 두 번째만 x+73으로 지그재그, 세로 간격 24.
+- 면 `gradient-card-deep`, 글자 `title-md`: 1줄 흰색 Bold, 2줄 `<em>` ExtraBold `accent-deep`.
+- 커넥터는 2px `connector` 꺾은선 + 18px 노드, `glow-violet` 광선. 노드는 카드 변 위에 걸친다.
+-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=860">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="loq.css"><title>FlowCards</title>
+<style>html,body{margin:0;background:var(--bg-000);} .pad{padding:30px 49px;}</style></head>
+<body class="loq">
+<div class="pad"><div class="loq-flow" style="height:497px">
+<svg width="340" height="500" style="position:absolute;inset:0;overflow:visible;filter:drop-shadow(0 0 5px var(--glow-violet))" aria-hidden="true"><path d="M38 150 V156 H1 V250 H74" fill="none" stroke="var(--connector)" stroke-width="2" stroke-linejoin="round"/><path d="M294 250 H327 V424 H252" fill="none" stroke="var(--connector)" stroke-width="2" stroke-linejoin="round"/><g fill="var(--connector)"><circle cx="38" cy="149" r="9"/><circle cx="74" cy="250" r="9"/><circle cx="294" cy="250" r="9"/><circle cx="251" cy="423" r="9"/></g></svg>
+<div class="loq-cut loq-flow__card title-md" style="left:0;top:0"><span>하이브리드 코어</span><em>SoC 아키텍처</em></div>
+<div class="loq-cut loq-flow__card title-md" style="left:73px;top:174px"><span>전용 AI 가속</span><em>NPU</em></div>
+<div class="loq-cut loq-flow__card title-md" style="left:0;top:347px"><span>저지연</span><em>데이터 경로</em></div>
+</div></div>
+</body>
+</html>

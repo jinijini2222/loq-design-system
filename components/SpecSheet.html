@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+<!--
+# SpecSheet
+
+상세 스펙 섹션 전체.
+
+- 태그 없이 `display-single` 흰색 제목(섹션 경계에서 글자 윗선까지 124px).
+- 치수 프레임 `loq-dim`: 762 × 484, `surface-spec`, 1px `line-400`. 윗변에 모델 필(높이 53, `surface-pill`, `pill` 글자 + 1px 구분선 + 모델코드 그라데이션)이 걸친다. 우상단 "단위 : mm".
+- 카테고리 `loq-specgroup`: 제목 `spec-heading` → `space-6` → 표. 그룹 사이 `space-52`.
+- 표 `loq-spectable`: `surface-spec`, 외곽 1px `line-400`, 위 2px `violet-400`, 행 높이 48(여러 줄은 행간 28), 행 구분 1px `line-200`, 항목명 칸 `spec-col` + 왼쪽 16px. 항목명 `spec-label` 흰색, 값 `spec-value` `ink-300`. 포트처럼 목록이면 `• ` 머리표.
+- 맨 아래 `loq-footer`: 위 1px 선 + caption `ink-300` 가운데.
+-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=860">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="loq.css"><title>SpecSheet</title>
+<style>html,body{margin:0;background:var(--bg-000);} .pad{padding:0;}.loq-section{padding-bottom:30px}</style></head>
+<body class="loq">
+<div class="loq-canvas"><section class="loq-section"><div class="loq-divider"><svg viewBox="0 0 30 64" aria-hidden="true"><circle class="ring" cx="15" cy="14" r="10" transform="rotate(-130 15 14)"/><circle class="core" cx="15" cy="32" r="3.5"/><path class="tip" d="M4 38 L15 46 L26 38 L15 64 Z"/></svg></div>
+<header class="loq-spechead"><h2 class="loq-spechead__title display-single">상세 스펙</h2></header>
+<div class="loq-wrap"><div class="loq-dim"><span class="loq-dim__pill pill">LOQ 15IPH11E<i></i><span class="loq-grad">MTM 83Y8000HKR</span></span><span class="loq-dim__unit">단위 : mm</span><div class="loq-dim__media"><div class="loq-ph" style="height:100%">제품 치수 이미지 + 치수선(#747474)</div></div></div>
+<div style="margin-top:60px">
+<div class="loq-specgroup"><h3 class="loq-specgroup__title spec-heading">성능</h3><table class="loq-spectable">
+<tr><th class="spec-label">프로세서</th><td class="spec-value">인텔<sup>®</sup> 코어<sup>TM</sup> 울트라 X7 358H · 16코어 (P 4 + E 8 + LPE 4) /<br>16스레드 · 최대 4.8GHz · 18MB 캐시</td></tr>
+<tr><th class="spec-label">AI</th><td class="spec-value">Copilot+ PC · NPU 최대 50 TOPS</td></tr>
+<tr><th class="spec-label">그래픽</th><td class="spec-value">인텔<sup>®</sup> Arc<sup>TM</sup> B390 GPU (내장)</td></tr>
+<tr><th class="spec-label">메모리</th><td class="spec-value">16GB LPDDR5X-9600 (온보드)</td></tr>
+</table></div>
+<div class="loq-specgroup"><h3 class="loq-specgroup__title spec-heading">연결</h3><table class="loq-spectable">
+<tr><th class="spec-label">무선</th><td class="spec-value">Wi-Fi<sup>®</sup> 6 (802.11ax 2x2) + 블루투스<sup>®</sup> 5.3</td></tr>
+<tr><th class="spec-label">포트</th><td class="spec-value"><ul><li>USB-A (5Gbps) 2개 · 4.5W 출력</li><li>HDMI<sup>®</sup> 2.1 1개 · 최대 4K/60Hz</li><li>슬림 팁 전원 단자 1개</li></ul></td></tr>
+</table></div>
+</div>
+<p class="loq-footer caption">Designed by ⓒ DAEWON CTS KOREA. All Rights Reserved.</p>
+</div></section></div>
+</body>
+</html>

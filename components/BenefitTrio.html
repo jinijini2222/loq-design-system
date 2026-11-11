@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko">
+<!--
+# BenefitTrio
+
+큰 사진 카드 하단의 혜택 3열(PSD: 배터리 섹션).
+
+- 3등분, 칸 사이 1px 점선(#c5c2c6 26%).
+- 제목 `title-sm` 흰색, 강조 수치는 `<mark>`(highlight-pink + pink-300 21% 하이라이트 바). 부제 `body-md` `ink-150`.
+- 아래 130px 링 아이콘: 7px 트랙 `ring-track` + 브랜드 그라데이션 아크 + `ring-dot` 빛나는 끝점. 중앙 수치는 `ring-num` 그라데이션.
+- 카드 아래 13px 띄우고 `loq-note` 각주(caption, ink-400 88%).
+-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=860">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="loq.css"><title>BenefitTrio</title>
+<style>html,body{margin:0;background:var(--bg-000);} .pad{padding:30px 49px;}.box{background:var(--bg-100);padding:30px 0 34px;border:1px solid var(--line-400)}</style></head>
+<body class="loq">
+<div class="pad"><div class="box"><div class="loq-benefit">
+<div class="loq-benefit__col"><p class="loq-benefit__title title-sm">래피드 차지 프로<sup>*</sup></p><p class="loq-benefit__sub body-md">고속 충전 지원</p><div class="loq-ring"><svg viewBox="0 0 130 130"><defs><linearGradient id="g1" x1="0" x2="1" y1="0" y2="0"><stop offset="0" style="stop-color:var(--violet-500)"/><stop offset="1" style="stop-color:var(--pink-300)"/></linearGradient></defs><path class="arc" stroke="url(#g1)" d="M40 117 A58 58 0 0 1 40 13"/><path class="arc" stroke="url(#g1)" d="M90 13 A58 58 0 0 1 90 117"/><circle class="dot" cx="96" cy="16" r="7"/><circle class="dot" cx="36" cy="113" r="6"/><path d="M74 28 L46 74 H64 L56 104 L86 56 H68 Z" fill="url(#g1)"/></svg></div></div>
+<div class="loq-benefit__col"><p class="loq-benefit__title title-sm">약 30분 <mark>70%</mark> 충전</p><p class="loq-benefit__sub body-md">짧은 시간에 빠른 충전</p><div class="loq-ring"><svg viewBox="0 0 130 130"><defs><linearGradient id="g2" x1="0" x2="1" y1="0" y2="0"><stop offset="0" style="stop-color:var(--violet-500)"/><stop offset="1" style="stop-color:var(--pink-300)"/></linearGradient></defs><circle class="track" cx="65" cy="65" r="58"/><path class="arc" stroke="url(#g2)" d="M65 123 A58 58 0 1 1 113 33"/><circle class="dot" cx="113" cy="33" r="7"/></svg><div class="loq-ring__center"><b class="loq-grad ring-num">70<small>%</small></b><span>약 30분</span></div></div></div>
+<div class="loq-benefit__col"><p class="loq-benefit__title title-sm">스마트 배터리 기술</p><p class="loq-benefit__sub body-md">효율적인 배터리 관리</p><div class="loq-ring"><svg viewBox="0 0 130 130"><defs><linearGradient id="g3" x1="0" x2="1" y1="0" y2="0"><stop offset="0" style="stop-color:var(--violet-500)"/><stop offset="1" style="stop-color:var(--pink-300)"/></linearGradient></defs><circle cx="65" cy="65" r="58" fill="none" stroke="url(#g3)" stroke-width="7" stroke-dasharray="14 6"/><path d="M50 40 V54 M80 40 V54 M44 54 H86 V70 Q86 84 70 86 V112 H60 V86 Q44 84 44 70 Z" fill="url(#g3)" stroke="url(#g3)" stroke-width="5" stroke-linejoin="round"/><circle class="dot" cx="50" cy="38" r="5"/><circle class="dot" cx="80" cy="38" r="5"/></svg></div></div>
+</div></div><p class="loq-note caption">* 충전 속도는 사용 환경과 조건에 따라 달라질 수 있습니다.</p></div>
+</body>
+</html>

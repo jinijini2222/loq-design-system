@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko">
+<!--
+# SpecCard
+
+히어로 아래 핵심 스펙 카드(시안 JPG 기준). `loq-cut loq-spec`.
+
+- 라벨(`label`, accent-text, 대문자) → 카드 전폭 1px 구분선 → `title-lg` 흰색 2줄.
+- 이미지는 `loq-spec__media`(오른쪽 60%, 왼쪽으로 마스크 페이드).
+-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=860">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="loq.css"><title>SpecCard</title>
+<style>html,body{margin:0;background:var(--bg-000);} .pad{padding:24px 49px;}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}</style></head>
+<body class="loq">
+<div class="pad">
+<article class="loq-cut loq-spec"><span class="loq-spec__label label">CPU</span><div class="loq-spec__rule"></div><h3 class="loq-spec__title title-lg">인텔<sup>®</sup> 코어<sup>TM</sup> 울트라<br>시리즈 3 프로세서</h3><div class="loq-spec__media"><div class="loq-ph">제품·칩 합성 이미지</div></div></article>
+<div class="g">
+<article class="loq-cut loq-spec" style="min-height:300px"><span class="loq-spec__label label">Graphics</span><div class="loq-spec__rule"></div><h3 class="loq-spec__title title-lg">통합 인텔<sup>®</sup> Arc<sup>TM</sup><br>그래픽</h3></article>
+<article class="loq-cut loq-spec" style="min-height:300px"><span class="loq-spec__label label">Memory</span><div class="loq-spec__rule"></div><h3 class="loq-spec__title title-lg">통합 메모리<br>아키텍처 <small class="caption" style="color:var(--ink-300)">(UMA)</small></h3></article>
+</div></div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ko">
+<!--
+# CompareCard
+
+OFF/ON 전후 비교 이미지 카드. 3열(`col-3` 246px, 간격 `space-11`).
+
+- 이미지 182px 높이를 1px 흰 선으로 반 분할, 왼쪽 하단 OFF 칩(반투명 검정 + ink-300 테두리), 오른쪽 하단 ON 칩(`on-chip`).
+- 아래 68px `surface-500` 라벨 바, `title-sm` 흰색 가운데, 우하단 `cut-md` 컷.
+-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=860">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="loq.css"><title>CompareCard</title>
+<style>html,body{margin:0;background:var(--bg-000);} .pad{padding:30px 49px;}.g{display:flex;justify-content:space-between}</style></head>
+<body class="loq">
+<div class="pad"><div class="g"><figure class="loq-compare"><div class="loq-compare__media"><div class="loq-ph">OFF</div><div class="loq-ph">ON</div><span class="loq-onoff loq-onoff--off">OFF</span><span class="loq-onoff loq-onoff--on">ON</span></div><figcaption class="loq-compare__label title-xs">레이 트레이싱</figcaption></figure><figure class="loq-compare"><div class="loq-compare__media"><div class="loq-ph">OFF</div><div class="loq-ph">ON</div><span class="loq-onoff loq-onoff--off">OFF</span><span class="loq-onoff loq-onoff--on">ON</span></div><figcaption class="loq-compare__label title-xs">XeSS AI 업스케일링</figcaption></figure><figure class="loq-compare"><div class="loq-compare__media"><div class="loq-ph">OFF</div><div class="loq-ph">ON</div><span class="loq-onoff loq-onoff--off">OFF</span><span class="loq-onoff loq-onoff--on">ON</span></div><figcaption class="loq-compare__label title-xs">온보드 AI 비주얼 처리</figcaption></figure></div></div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+<!--
+# StepCard
+
+번호가 붙은 혜택·단계 목록. `loq-steps` 안에 `loq-cut loq-step` 여러 개.
+
+- 카드 폭 406px, `surface-violet` + `line-violet`, `cut-md`, 패딩 24/28.
+- 짝수 카드는 64px 들여 지그재그, 사이를 `loq-dash`(glow 점선 + 노드)로 연결.
+- 번호 배지 `loq-badge`(gradient-badge, cut-sm) + 1줄 `ink-100` / 2줄 `accent-text` 600.
+- 오른쪽 빈 공간에는 인물·제품 사진을 둔다.
+-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=860">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="loq.css"><title>StepCard</title>
+<style>html,body{margin:0;background:var(--bg-000);} .pad{padding:32px 49px;}</style></head>
+<body class="loq">
+<div class="pad"><div class="loq-steps">
+<div class="loq-cut loq-step"><span class="loq-badge">1</span><div><p class="loq-step__a title-xs">든든한 파워 리그와 함께</p><p class="loq-step__b title-xs">더 과감하게 플레이</p></div></div>
+<div class="loq-cut loq-step"><span class="loq-badge">2</span><div><p class="loq-step__a title-xs">24시간 대기하는</p><p class="loq-step__b title-xs">전문가 팀</p></div></div>
+<div class="loq-cut loq-step"><span class="loq-badge">3</span><div><p class="loq-step__a title-xs">고급 지식으로 무장한</p><p class="loq-step__b title-xs">파워 플레이어</p></div></div>
+<div class="loq-cut loq-step"><span class="loq-badge">4</span><div><p class="loq-step__a title-xs">나만의 히어로 팀이</p><p class="loq-step__b title-xs">직접 돕는 현장 지원</p></div></div>
+<span class="loq-dash" style="top:122px;height:52px"></span><span class="loq-dash" style="top:378px;height:52px"></span>
+</div></div>
+</body>
+</html>

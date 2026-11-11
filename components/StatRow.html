@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko">
+<!--
+# StatRow
+
+수치 3개. `loq-stats` > `loq-stat` × 3, 폭 392px(차트와 같은 열).
+
+- 숫자 `stat`(60 ExtraBold) + `gradient-stat`(위 파랑 → 아래 보라). 소수점 수치는 자간 -0.075em.
+- 단위 `stat-unit` 흰색 50%, 라벨 `stat-label` 흰색.
+- 칸 사이 1px 세로선(#545454 72%), 선 뒤 26px.
+-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=860">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="loq.css"><title>StatRow</title>
+<style>html,body{margin:0;background:var(--bg-000);} .pad{padding:40px 49px;}</style></head>
+<body class="loq">
+<div class="pad"><div class="loq-stats" style="width:392px;margin-left:auto">
+<div class="loq-stat"><span class="loq-stat__num stat">16</span><span class="loq-stat__unit stat-unit">Core</span><span class="loq-stat__label stat-label">코어</span></div>
+<div class="loq-stat"><span class="loq-stat__num stat" style="letter-spacing:-0.075em">4.8</span><span class="loq-stat__unit stat-unit">GHz</span><span class="loq-stat__label stat-label">최대 터보 클럭</span></div>
+<div class="loq-stat"><span class="loq-stat__num stat">18</span><span class="loq-stat__unit stat-unit">MB</span><span class="loq-stat__label stat-label">스마트 캐시</span></div>
+</div></div>
+</body>
+</html>

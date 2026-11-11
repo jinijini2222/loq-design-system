@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ko">
+<!--
+# SectionDivider
+
+섹션 경계에 놓는 hairline + 엠블럼. `.loq-section` 안 첫 요소로 `<div class="loq-divider">` + 인라인 SVG를 넣는다.
+
+- 선: 1px, 가운데 `line-divider`에서 양끝 투명으로. 엠블럼 좌우 26px은 비운다.
+- 엠블럼: 끊긴 링(r10, 굵기 5) 중심이 경계선 위, 아래로 점(r3.5)과 화살촉. 면 `glow-core`, `glow-violet` 광선.
+- 경계 위는 이전 섹션의 검정(bg-000), 아래는 다음 섹션의 `bg-200`.
+-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=860">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="loq.css"><title>SectionDivider</title>
+<style>html,body{margin:0;background:var(--bg-000);} .pad{padding:0;}.top{height:60px;background:var(--bg-000)} .loq-section{height:110px;padding:0}</style></head>
+<body class="loq">
+<div class="loq-canvas"><div class="top"></div><section class="loq-section"><div class="loq-divider"><svg viewBox="0 0 30 64" aria-hidden="true"><circle class="ring" cx="15" cy="14" r="10" transform="rotate(-130 15 14)"/><circle class="core" cx="15" cy="32" r="3.5"/><path class="tip" d="M4 38 L15 46 L26 38 L15 64 Z"/></svg></div></section></div>
+</body>
+</html>

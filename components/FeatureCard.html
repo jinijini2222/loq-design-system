@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko">
+<!--
+# FeatureCard
+
+한 줄 강조 + 한 줄 설명 카드. `loq-cut loq-feature`.
+
+- 375 × 160, `gradient-card` 위 40px 그리드 라인, 1px `gradient-edge`, `cut-lg`.
+- 두 줄 모두 `title-lg`(30/43 Bold): 1줄 `accent-text`, 2줄 `ink-100`.
+- 왼쪽 사진 카드(375 × 330, `loq-frame`) 옆에 세로 2단(간격 `space-10`), 2열 간격 `space-12`.
+-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=860">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="loq.css"><title>FeatureCard</title>
+<style>html,body{margin:0;background:var(--bg-000);} .pad{padding:30px 49px;}.g{display:grid;grid-template-columns:375px 375px;gap:12px} .col{display:flex;flex-direction:column;gap:10px} .ov{position:absolute;inset:16px 16px auto 16px;display:flex;justify-content:space-between;align-items:center;z-index:2}</style></head>
+<body class="loq">
+<div class="pad"><div class="g">
+<div class="loq-frame" style="height:330px;position:relative"><div class="loq-ph">사진 (375 × 330)</div><div class="ov"><span class="loq-mode chip">공부 모드<i><svg viewBox="0 0 24 24"><path d="M4 20l4-1 10-10-3-3L5 16l-1 4z"/><path d="M13 6l3 3"/></svg></i></span><span class="loq-keys"><span class="loq-key key">Fn</span>+<span class="loq-key loq-key--q key">Q</span></span></div></div>
+<div class="col">
+<div class="loq-cut loq-feature"><p class="loq-feature__hl title-lg">대형 듀얼 팬 &amp; 듀얼 배기구</p><p class="loq-feature__tx title-lg">열 설계</p></div>
+<div class="loq-cut loq-feature"><p class="loq-feature__hl title-lg">퍼포먼스 모드에서</p><p class="loq-feature__tx title-lg">최대 성능 발휘</p></div>
+</div></div></div>
+</body>
+</html>

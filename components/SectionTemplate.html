@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<!--
+# SectionTemplate
+
+COOLER 섹션을 PSD 간격 그대로 조립한 예시(860px). 경계 → 125 → 태그 → 35 → 헤드라인 → 30 → 본문 → 50 → 762 × 513 비주얼 → 10 → 사진 카드 + 피처 카드 2단 → 120.
+
+- 새 섹션은 `.loq-section` + `.loq-divider` + `.loq-head` + `.loq-wrap` 순서로 만든다.
+-->
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=860">
+<link rel="stylesheet" href="../tokens/tokens.css">
+<link rel="stylesheet" href="loq.css"><title>SectionTemplate</title>
+<style>html,body{margin:0;background:var(--bg-000);} .pad{padding:0;}.ov{position:absolute;inset:16px 16px auto 16px;display:flex;justify-content:space-between;align-items:center;z-index:2}</style></head>
+<body class="loq">
+<div class="loq-canvas"><div style="height:30px"></div><section class="loq-section"><div class="loq-divider"><svg viewBox="0 0 30 64" aria-hidden="true"><circle class="ring" cx="15" cy="14" r="10" transform="rotate(-130 15 14)"/><circle class="core" cx="15" cy="32" r="3.5"/><path class="tip" d="M4 38 L15 46 L26 38 L15 64 Z"/></svg></div>
+<header class="loq-head">
+<span class="loq-tag tag">Cooler</span>
+<h2 class="loq-head__title display"><span>강력한 쿨링</span><span class="loq-grad">흔들림 없는 퍼포먼스</span></h2>
+<p class="loq-head__body body-lg">레노버 LOQ의 효율적인 쿨링 시스템은 대형 듀얼 팬과 넓은 배기 구조로<br>발열을 효과적으로 관리합니다. 장시간 게이밍에도 안정적인 성능을 유지하도록 돕고,<br><span class="loq-key loq-key--inline">Fn</span> + <span class="loq-key loq-key--inline loq-key--q">Q</span> 키로 사용 환경에 맞는 성능 모드를 간편하게 전환할 수 있습니다.</p>
+</header>
+<div class="loq-wrap">
+<div class="loq-frame" style="height:513px"><div class="loq-ph">메인 비주얼 (762 × 513)</div></div>
+<div style="display:grid;grid-template-columns:375px 375px;gap:12px;margin-top:10px">
+<div class="loq-frame" style="height:330px;position:relative"><div class="loq-ph">사진 (375 × 330)</div><div class="ov"><span class="loq-mode chip">공부 모드<i><svg viewBox="0 0 24 24"><path d="M4 20l4-1 10-10-3-3L5 16l-1 4z"/><path d="M13 6l3 3"/></svg></i></span><span class="loq-keys"><span class="loq-key key">Fn</span>+<span class="loq-key loq-key--q key">Q</span></span></div></div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div class="loq-cut loq-feature"><p class="loq-feature__hl title-lg">대형 듀얼 팬 &amp; 듀얼 배기구</p><p class="loq-feature__tx title-lg">열 설계</p></div>
+<div class="loq-cut loq-feature"><p class="loq-feature__hl title-lg">퍼포먼스 모드에서</p><p class="loq-feature__tx title-lg">최대 성능 발휘</p></div>
+</div></div></div></section></div>
+</body>
+</html>
